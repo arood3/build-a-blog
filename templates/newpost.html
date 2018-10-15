@@ -1,33 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Enter A New Post Here</h1>
-<form action ='/newpost' method = 'post'>
-    <table>
-        <tr>
-            <td>
-            <label>
-                Title of Your Blog Post:</br>
-                <input type="text" name='title' value='{{title}}'/>
-                <p class="error">{{title_error}}</p>
-            </label>
-            </td>
-            <tr>
-                <td>
-                <label>
-                Enter A New Blog Post:</br>
-                <textarea name="body" rows="12" cols="75" value='{{body}}'></textarea>
-                <p class="error">{{body_error}}</p>
-                </label>
-               </td>
-            </tr>
-           <tr>
-               <td>
-                    <input type="submit" value='Add Entry' />
-               </td>
-           </tr>
-        </table> 
+<h1>What's on your mind?</h1>
+<form action="/new_entry" method="post">
+
+        <label for="title_field">How would you summarize your idea?</label>
+        <input id="title_field" name="title" type="text" value="{{ new_entry_title }}">
+
+        <label for="body_field">Tell me more:</label>
+        <textarea rows="4" cols="50" id="body_field" name="body" >{{ new_entry_body }}</textarea>
+
+    <input id="submit_button" type="submit" value="Save">
 </form>
-
-
 {% endblock %}
