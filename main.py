@@ -29,7 +29,7 @@ def blog():
     if request.args:
         id = request.args.get('id')
         blog = Blog.query.get(id)
-        return render_template('viewpost.html', titlebase = 'Build a Blog!', blog =blog)
+        return render_template('singlepost.html', titlebase = 'Build a Blog!', blog =blog)
 
 
         blogs = Blog.query.all()
